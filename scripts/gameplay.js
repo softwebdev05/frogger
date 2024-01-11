@@ -379,6 +379,10 @@ MyGame.screens['game-play'] = (function(game, objects, renderer, graphics, input
   }
 
   function gameLoop(time) {
+        // end game loop if tabbed out
+        if(document.hidden){
+            quit();
+        }
       let elapsedTime = time - lastTimeStamp;
       lastTimeStamp = time;
       if(waitTime > 0) waitTime -= elapsedTime;
