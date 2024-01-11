@@ -135,7 +135,7 @@ MyGame.screens['game-play'] = (function(game, objects, renderer, graphics, input
       let froggerPos = { 
           x: frogger.center.x, 
           y: frogger.center.y, 
-          bufferSize: frogger.size.width / 5 
+          bufferSize: frogger.size.width / 4
       };
 
       for(let i = 0; i < 5; i++){
