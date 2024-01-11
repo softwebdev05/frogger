@@ -85,7 +85,7 @@ MyGame.screens['game-play'] = (function(game, objects, renderer, graphics, input
   }
 
   function handleFrogHome(center){
-      if(!attractMode) playSound('home');
+      if(!attractMode && !justWon) playSound('home');
 
       // create a home particle system
       homeParticles = createHomeParticleSystem(center,frogger.size, graphics);
