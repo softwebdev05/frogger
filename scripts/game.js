@@ -43,7 +43,7 @@ MyGame.game = (function(screens) {
 
       // change canvas size based on window size (11:14 aspect ratio)
       let canvas = document.getElementById("id-canvas");
-      let height = window.innerHeight * 0.85;
+      let height = window.innerHeight * 0.90;
       let width = Math.floor((11/14)*height);
       canvas.width = width;
       canvas.height = height;
@@ -71,7 +71,7 @@ MyGame.game = (function(screens) {
           MyGame.bindings['right'] = 'ArrowRight';
       }
 
-      
+
       //
       // Go through each of the screens and tell them to initialize
       for (screen in screens) {
