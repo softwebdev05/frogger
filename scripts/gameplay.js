@@ -4,7 +4,7 @@ MyGame.screens['game-play'] = (function(game, objects, renderer, graphics, input
   const FROG_HOME_WAIT_TIME = 1500; // 1.5 seconds
   const WIN_WAIT_TIME = 5000; // 5 seconds
   const LOSE_WAIT_TIME = 3000; // 3 seconds
-  const COLLISION_RENDER = false;
+  const COLLISION_RENDER = false; // useful for debugging the attract mode ai
 
   let inputBuffer = {};
   let lastTimeStamp = performance.now();

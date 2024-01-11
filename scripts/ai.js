@@ -77,6 +77,7 @@ function getCollisionGrid(trafficSystems, waterSystems, frogHomes){
         }   
     } else { // if the frog homes are all occupied make the middle home the goal
         for(let i = 0; i < 4; i++){
+            if(i == 2) currentGoal = {x: i+20, y: 0};
             collisionGrid[0][i+20] = true;
         }
     }
