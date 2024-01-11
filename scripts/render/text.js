@@ -5,13 +5,13 @@
 //
 // --------------------------------------------------------------
 MyGame.render.Text = (function(graphics) {
-  'use strict';
+    'use strict';
 
-  function render(spec, useBG=false) {
-      graphics.drawText(spec, useBG);
-  }
+    function render(spec, useBG=false) {
+        graphics.drawText(spec, useBG);
+    }
 
-  return {
-      render: render
-  };
+    return {
+        render: render
+    };
 }(MyGame.graphics));

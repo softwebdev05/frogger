@@ -1,13 +1,13 @@
 MyGame.render.Frogger = (function(graphics) {
-  'use strict';
+    'use strict';
 
-  function render(spec) {
-      if (spec.imageReady) {
-          graphics.drawTexture(spec.image, spec.center, spec.rotation, spec.size);
-      }
-  }
+    function render(spec) {
+        if (spec.imageReady) {
+            graphics.drawTexture(spec.image, spec.center, spec.rotation, spec.size);
+        }
+    }
 
-  return {
-      render: render
-  };
+    return {
+        render: render
+    };
 }(MyGame.graphics));

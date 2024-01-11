@@ -1,150 +1,150 @@
 @font-face {
-  font-family: 'arcade';
-  src: url('../assets/fonts/vt323-regular-webfont.eot');
-  src: url('../assets/fonts/vt323-regular-webfont.eot?#iefix') format('embedded-opentype'),
-       url('../assets/fonts/vt323-regular-webfont.woff2') format('woff2'),
-       url('../assets/fonts/vt323-regular-webfont.woff') format('woff'),
-       url('../assets/fonts/vt323-regular-webfont.ttf') format('truetype'),
-       url('../assets/fonts/vt323-regular-webfont.svg#vt323regular') format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'arcade';
+    src: url('../assets/fonts/vt323-regular-webfont.eot');
+    src: url('../assets/fonts/vt323-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../assets/fonts/vt323-regular-webfont.woff2') format('woff2'),
+         url('../assets/fonts/vt323-regular-webfont.woff') format('woff'),
+         url('../assets/fonts/vt323-regular-webfont.ttf') format('truetype'),
+         url('../assets/fonts/vt323-regular-webfont.svg#vt323regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
 }
 
 body {
-  background-color: rgba(30, 130, 76, 1);
-  font-family: 'arcade';
-  padding-top: 25px;
+    background-color: rgba(30, 130, 76, 1);
+    font-family: 'arcade';
+    padding-top: 25px;
 }
 
 #game {
-  margin: auto;
-  display: block;
-  border-style: solid;
-  border-width: 2px;
-  background-color: rgba(0, 0, 0, 0.75);
-  font-size: 40px;
+    margin: auto;
+    display: block;
+    border-style: solid;
+    border-width: 2px;
+    background-color: rgba(0, 0, 0, 0.75);
+    font-size: 40px;
 }
 
 #game .screen {
-  width: 100%;
-  height: 100%;
-  display: none;
+    width: 100%;
+    height: 100%;
+    display: none;
 }
 
 #game .screen.active {
-  display: block;
+    display: block;
 }
 
 #main-menu {
-  padding-top: 2em;
-  font-size: 0.75em;
+    padding-top: 2em;
+    font-size: 0.75em;
 }
 
 ul.menu {
-  text-align: center;
-  padding: 0;
-  margin: 0;
-  list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
 ul.menu li {
-  margin: 0.8em 0;
+    margin: 0.8em 0;
 }
 
 ul.menu li button {
-  font-family: 'arcade';
-  font-size: 1em;
-  color: white;
-  width: 70%;
-  height: 5%;
-  background: rgb(150, 0, 150);
-  border: 0.1em solid rgb(150, 0, 150);
-  border-radius: 0.5em;
-  box-shadow: 0.2em 0.2em 0.3em rgb(0, 0, 0);
+    font-family: 'arcade';
+    font-size: 1em;
+    color: white;
+    width: 70%;
+    height: 5%;
+    background: rgb(150, 0, 150);
+    border: 0.1em solid rgb(150, 0, 150);
+    border-radius: 0.5em;
+    box-shadow: 0.2em 0.2em 0.3em rgb(0, 0, 0);
 }
 
 ul.menu li button:hover {
-  cursor: pointer;
-  background: rgb(100, 0, 100);
+    cursor: pointer;
+    background: rgb(100, 0, 100);
 }
 
 ul.menu li button:active {
-  color: white;
-  background: rgb(50, 0, 50);
+    color: white;
+    background: rgb(50, 0, 50);
 }
 
 #game div h1 {
-  font-size: 1.5em;
-  text-align: center;
-  color: white;
+    font-size: 1.5em;
+    text-align: center;
+    color: white;
 }
 
 #high-scores ol {
-  text-align: center;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  color: white;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    color: white;
 }
 
 #high-scores ol li {
-  font-size: 1em;
+    font-size: 1em;
 }
 
 #game div p {
-  font-size: 0.8em;
-  font-weight: bold;
-  margin-bottom: 0.5em;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
 }
 
 #about p {
-  text-align: center;
-  color: white;
+    text-align: center;
+    color: white;
 }
 
 #logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 95%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
 }
 
 #controls p {
-  margin-right: 15px;
-  color:white;
+    margin-right: 15px;
+    color:white;
 }
 
 .control-div{
-  display: flex;
-  font-size: 75%;
-  padding: auto;
-  justify-content: center;
+    display: flex;
+    font-size: 75%;
+    padding: auto;
+    justify-content: center;
 }
 
 .controls-button{
-  font-family: 'arcade';
-  font-size: 100%;
-  color: white;
-  width: 50%;
-  height: 100%;
-  background: rgb(150, 0, 150);
-  border: 0.1em solid rgb(100, 0, 100);
-  border-radius: 0.5em;
-  box-shadow: 0.2em 0.2em 0.3em rgb(0, 0, 0);
+    font-family: 'arcade';
+    color: white;
+    font-size: 100%;
+    width: 50%;
+    height: 100%;
+    background: rgb(150, 0, 150);
+    border: 0.1em solid rgb(100, 0, 100);
+    border-radius: 0.5em;
+    box-shadow: 0.2em 0.2em 0.3em rgb(0, 0, 0);
 }
 
 .controls-button:hover{
-  cursor: pointer;
-  background: rgb(100, 0, 100);
+    cursor: pointer;
+    background: rgb(100, 0, 100);
 }
 
 .controls-button:active {
-  background: rgb(50, 0, 50);
+    background: rgb(50, 0, 50);
 }
 
 .nocursor { 
-  cursor:none;
+    cursor:none; 
 }
 
 h1 {

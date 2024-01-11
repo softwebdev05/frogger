@@ -16,7 +16,7 @@ function getCollisionGrid(trafficSystems, waterSystems, frogHomes){
         Object.getOwnPropertyNames(cars).forEach(function(value, index, array) {
             let car = cars[value];
             let rows = trafficSystems[i].getRowIndex(car);
-
+            
             for(let j = rows.begin; j <= rows.end; j++){
                 if(j < GRID_WIDTH && j >= 0){
                     collisionGrid[car.level][j] = false;
@@ -37,7 +37,7 @@ function getCollisionGrid(trafficSystems, waterSystems, frogHomes){
                     }
                 }
             });
-
+            
 
         } else { // add turtles to the collision grid
             let turtles = waterSystems[i].turtles;
@@ -46,7 +46,7 @@ function getCollisionGrid(trafficSystems, waterSystems, frogHomes){
 
                 if([4, 5].indexOf(turtle.spriteIndex) < 0){
                     let rows = waterSystems[i].getRowIndex(turtle);
-
+                
                     for(let j = rows.begin; j <= rows.end; j++){
                         if(j < GRID_WIDTH && j >= 0){
                             collisionGrid[turtle.level][j] = true;
@@ -91,7 +91,6 @@ function getMove(frogger, trafficSystems, waterSystems, frogHomes){
     let froggerLoc = frogger.getIndex()
     let nextMove = findPath(froggerLoc, collisionGrid);
 
-
     // these checks help frogger make a decision if he's in danger or can't find an adequate path
     let upSafe = 
         collisionGrid[froggerLoc.y - 1][froggerLoc.x] &&
@@ -104,7 +103,7 @@ function getMove(frogger, trafficSystems, waterSystems, frogHomes){
         (collisionGrid[froggerLoc.y + 1][froggerLoc.x + 1] ||
         collisionGrid[froggerLoc.y + 1][froggerLoc.x - 1]);
 
-        let rightSafe = 
+    let rightSafe = 
         froggerLoc.x < 43 &&
         collisionGrid[froggerLoc.y][froggerLoc.x + WIDTH_SCALE] &&
         (collisionGrid[froggerLoc.y][froggerLoc.x + WIDTH_SCALE/2] ||
@@ -116,24 +115,23 @@ function getMove(frogger, trafficSystems, waterSystems, frogHomes){
         (collisionGrid[froggerLoc.y][froggerLoc.x - WIDTH_SCALE/2] ||
         collisionGrid[froggerLoc.y][froggerLoc.x - WIDTH_SCALE + 1]);
 
-
-        if(!collisionGrid[froggerLoc.y][froggerLoc.x] && (!leftSafe || !rightSafe)){
-            if(upSafe){
-                return {direction: "up", cGrid: collisionGrid};
-            } else if(leftSafe || froggerLoc.x == 43){
-                return {direction: "left", cGrid: collisionGrid};
-            } else if(rightSafe || froggerLoc.x == 0){
-                return {direction: "right", cGrid: collisionGrid};
-            } else if(downSafe){
-                return {direction: "down", cGrid: collisionGrid};
-            }
-        }
-    
-        if(nextMove.y < froggerLoc.y || underGoal(froggerLoc)){
+    if(!collisionGrid[froggerLoc.y][froggerLoc.x] && (!leftSafe || !rightSafe)){
+        if(upSafe){
             return {direction: "up", cGrid: collisionGrid};
+        } else if(leftSafe || froggerLoc.x == 43){
+            return {direction: "left", cGrid: collisionGrid};
+        } else if(rightSafe || froggerLoc.x == 0){
+            return {direction: "right", cGrid: collisionGrid};
+        } else if(downSafe){
+            return {direction: "down", cGrid: collisionGrid};
         }
+    }
 
-        if(nextMove.x < froggerLoc.x){
+    if(nextMove.y < froggerLoc.y || underGoal(froggerLoc)){
+        return {direction: "up", cGrid: collisionGrid};
+    }
+
+    if(nextMove.x < froggerLoc.x){
         return {direction: "left", cGrid: collisionGrid};
     }
 
@@ -143,7 +141,10 @@ function getMove(frogger, trafficSystems, waterSystems, frogHomes){
 
     if(nextMove.y > froggerLoc.y){
         return {direction: "down", cGrid: collisionGrid};
-        return {direction: "", cGrid: collisionGrid};
+    }
+    
+
+    return {direction: "", cGrid: collisionGrid};
 }
 
 
@@ -173,7 +174,7 @@ function findPath(froggerLoc, collisionGrid){
 
     let stack = [];
     let point = cameFrom[currentGoal.y][currentGoal.x];
-
+    
     // if no current path to the goal exists, find lowest manhattan point
     if (point == null){
         let lowest = Number.MAX_VALUE;
@@ -184,7 +185,7 @@ function findPath(froggerLoc, collisionGrid){
                     point = cameFrom[i][j];
                     lowest = manhattan_dist;
                 }
-
+                
             }
         }
     }
@@ -231,5 +232,4 @@ function checkBounds(loc){
 
 function underGoal(loc){
     return loc.y == 1  && (loc.x >= currentGoal.x - 2 && loc.x <= currentGoal.x + 2);
-    }
-} 
+}

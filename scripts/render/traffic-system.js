@@ -1,9 +1,9 @@
 // --------------------------------------------------------------
 //
-// Renders the particles in a particle system
+// Renders the cars in a traffic system
 //
 // --------------------------------------------------------------
-MyGame.render.ParticleSystem = function(system, graphics, imageSrc) {
+MyGame.render.TrafficSystem = function(system, graphics, imageSrc) {
     'use strict';
 
     let image = new Image();
@@ -18,28 +18,29 @@ MyGame.render.ParticleSystem = function(system, graphics, imageSrc) {
 
     //------------------------------------------------------------------
     //
-    // Render all particles
+    // Render all cars
     //
     //------------------------------------------------------------------
     function render() {
         if (isReady) {
-            Object.getOwnPropertyNames(system.particles).forEach( function(value) {
-                let particle = system.particles[value];
+            Object.getOwnPropertyNames(system.cars).forEach( function(value) {
+                let car = system.cars[value];
                 graphics.drawTexture(
                         image, 
                     {   
-                        x: particle.center.x, 
-                        y: particle.center.y,
+                        x: car.center.x, 
+                        y: car.center.y,
                     }, 
-                        particle.rotation, 
-                    {   width: particle.size.x, 
-                        height: particle.size.y,
+                    car.rotation, 
+                    {   width: car.size.x, 
+                        height: car.size.y,
                     },
                 );
                 
             });
         }
     }
+
 
     let api = {
         render: render,
