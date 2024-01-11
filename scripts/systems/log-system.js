@@ -117,8 +117,8 @@ MyGame.systems.LogSystem = function(spec) {
           Object.getOwnPropertyNames(logs).forEach(function(value, index, array) {
               let log = logs[value];
               if(
-                  log.center.x - (log.size.x / 2) < froggerPos.x &&
-                  log.center.x + (log.size.x / 2) > froggerPos.x
+                log.center.x - (log.size.x / 2) < froggerPos.x + froggerPos.bufferSize &&
+                log.center.x + (log.size.x / 2) > froggerPos.x - froggerPos.bufferSize
               ){
                   onLog = !log.isGator;
                   eaten = log.isGator;

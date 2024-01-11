@@ -95,8 +95,8 @@ MyGame.systems.TrafficSystem = function(spec) {
           Object.getOwnPropertyNames(cars).forEach(function(value, index, array) {
               let car = cars[value];
               if(
-                  car.center.x - (car.size.x / 2) < froggerPos.x + froggerPos.bufferSize &&
-                  car.center.x + (car.size.x / 2) > froggerPos.x - froggerPos.bufferSize
+                car.center.x - (car.size.x / 2) < froggerPos.x + froggerPos.bufferSize / 2 &&
+                car.center.x + (car.size.x / 2) > froggerPos.x - froggerPos.bufferSize / 2
               ){
                   crash = true;
               }
