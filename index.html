@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html lang = "en-US">
+<head>
+    <meta charset = "UTF-8">
+    <title>Frogger</title>
+
+    <link rel = "stylesheet" type = "text/css" href = "styles/game.css">
+</head>
+<body id = "body" onload = "MyGame.game.initialize();">
+    <div id = "game">
+        <div id = "main-menu" class = "screen">
+            <img src="assets/images/logo.png" alt="Frogger Logo" id="logo">
+            <ul class = "menu">
+                <li><button id = "id-new-game">New&nbsp;Game</button></li>
+                <li><button id = "id-high-scores">High&nbsp;Scores</button></li>
+                <li><button id = "id-controls">Controls</button></li>
+                <li><button id = "id-about">Credits</button></li>
+            </ul>
+        </div>
+        <div id = "game-play" class = "screen">
+            <canvas id = "id-canvas"></canvas>
+        </div>
+        <div id = "high-scores" class = "screen">
+            <h1>High Scores</h1>
+            <ol id = "scores"></ol>
+            <ul class = "menu">
+                <li><button id = "id-high-scores-back">Back</button></li>
+            </ul>
+        </div>
+        <div id = "controls" class = "screen">
+            <h1>Modify Your Controls</h1>
+            <div class="control-div">
+                <p>Up</p>
+                <button id = "up-button" class="controls-button"></button>
+            </div>
+            <div class="control-div">
+                <p>Down</p>
+                <button id = "down-button" class="controls-button"></button>
+            </div>
+            <div class="control-div">
+                <p>Left</p>
+                <button id = "left-button" class="controls-button"></button>
+            </div>
+            <div class="control-div">
+                <p>Right</p>
+                <button id = "right-button" class="controls-button"></button>
+            </div>
+            <ul class = "menu">
+                <li><button id = "id-controls-back">Back</button></li>
+            </ul>
+        </div>
+        <div id = "about" class = "screen">
+            <h1>Credits</h1>
+            <p>Developed by</p>
+            <p>Andrei Anton</p>
+            <ul class = "menu">
+                <li><button id = "id-about-back">Back</button></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        let MyGame = {
+            screens : {},
+            input: {},
+            objects: {},
+            render: [],
+            bindings: {},
+            systems: {},
+            highscores: {},
+            sounds: {},
+        };
+    </script>
+    <script src = "scripts/audio.js"></script>
+    <script src = "scripts/random.js"></script>
+    <script src = "scripts/persistence.js"></script>
+    <script src = "scripts/systems/particle-system.js"></script>
+    <script src = "scripts/systems/traffic-system.js"></script>
+    <script src = "scripts/systems/log-system.js"></script>
+    <script src = "scripts/systems/turtle-system.js"></script>
+    <script src = "scripts/objects/frogger.js"></script>
+    <script src = "scripts/objects/text.js"></script>
+    <script src = "scripts/objects/homes.js"></script>
+    <script src = "scripts/render/core.js"></script>
+    <script src = "scripts/render/frogger.js"></script>
+    <script src = "scripts/render/text.js"></script>
+    <script src = "scripts/render/particle-system.js"></script>
+    <script src = "scripts/render/traffic-system.js"></script>
+    <script src = "scripts/render/log-system.js"></script>
+    <script src = "scripts/render/turtle-system.js"></script>
+    <script src = "scripts/render/animated-model.js"></script>
+    <script src = "scripts/render/homes.js"></script>
+    <script src = "scripts/input-keyboard.js"></script>
+    <script src = "scripts/input-mouse.js"></script>
+    <script src = "scripts/creators.js"></script>
+    <script src = "scripts/ai.js"></script>
+
+    <script src = "scripts/game.js"></script>
+    <script src = "scripts/mainmenu.js"></script>
+    <script src = "scripts/gameplay.js"></script>
+    <script src = "scripts/highscores.js"></script>
+    <script src = "scripts/controls.js"></script>
+    <script src = "scripts/about.js"></script>
+
+</body>
+</html>
