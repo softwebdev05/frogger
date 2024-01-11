@@ -90,7 +90,6 @@ function getMove(frogger, trafficSystems, waterSystems, frogHomes){
     let collisionGrid = getCollisionGrid(trafficSystems, waterSystems, frogHomes);
     let froggerLoc = frogger.getIndex()
     let nextMove = findPath(froggerLoc, collisionGrid);
-    console.log(froggerLoc, nextMove);
 
 
     // these checks help frogger make a decision if he's in danger or can't find an adequate path
