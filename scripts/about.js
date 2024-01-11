@@ -8,11 +8,11 @@ MyGame.screens['about'] = (function(game) {
   }
 
   function run() {
-      // modify the menu button spacing
-      let menuButtons = document.getElementsByClassName('menu');
-      for (let button = 0; button < menuButtons.length; button++) {
-          menuButtons[button].style.paddingTop = (window.innerHeight * 0.85) / 2.15 + "px";
-      }
+              // // modify the menu button spacing
+        // let menuButtons = document.getElementsByClassName('menu');
+        // for (let button = 0; button < menuButtons.length; button++) {
+        //     menuButtons[button].style.paddingTop = (window.innerHeight * 0.85) / 2.15 + "px";
+        // }
   }
 
   return {

@@ -56,8 +56,8 @@ ul.menu li button {
   font-family: 'arcade';
   font-size: 1em;
   color: white;
-  width: 10em;
-  height: 1.5em;
+  width: 70%;
+  height: 5%;
   background: rgb(150, 0, 150);
   border: 0.1em solid rgb(150, 0, 150);
   border-radius: 0.5em;
@@ -112,21 +112,22 @@ ul.menu li button:active {
 
 #controls p {
   margin-right: 15px;
-  margin-bottom: 15px;
   color:white;
 }
 
 .control-div{
   display: flex;
+  font-size: 75%;
+  padding: auto;
   justify-content: center;
 }
 
 .controls-button{
   font-family: 'arcade';
-  font-size: 0.9em;
+  font-size: 100%;
   color: white;
-  width: 10em;
-  height: 1.5em;
+  width: 50%;
+  height: 100%;
   background: rgb(150, 0, 150);
   border: 0.1em solid rgb(100, 0, 100);
   border-radius: 0.5em;
@@ -143,5 +144,9 @@ ul.menu li button:active {
 }
 
 .nocursor { 
-  cursor:none; 
+  cursor:none;
+}
+
+h1 {
+    white-space: nowrap;
 }

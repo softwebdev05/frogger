@@ -71,6 +71,7 @@ MyGame.game = (function(screens) {
           MyGame.bindings['right'] = 'ArrowRight';
       }
 
+      
       //
       // Go through each of the screens and tell them to initialize
       for (screen in screens) {
