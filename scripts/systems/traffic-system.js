@@ -112,15 +112,15 @@ MyGame.systems.TrafficSystem = function(spec) {
       let begin = (car.center.x - car.size.x / 2) / gridLength;
       let end = (car.center.x + car.size.x / 2) / gridLength;
 
-      let buffer = ((car.speed * levelMultipliers[level]) / gridLength);
+      let buffer = ((car.speed) / gridLength) / 2;
 
       // give the ai a little bit of buffer
       if(car.direction.x > 0){
-          end += buffer/2;
-          begin -= 1;
+          end += buffer;
+          //begin -= 1;
       } else{
-          begin -= buffer/2;
-          end += 1;
+          begin -= buffer;
+          //end += 1;
       }
 
       return {

@@ -57,8 +57,8 @@ MyGame.screens['game-play'] = (function(game, objects, renderer, graphics, input
       if(!attractMode) pauseSound('music');
       lowTimePlayed = false;
       lowAudioTime = 0;
-      livesLeft -= 1;
-      if(livesLeft == 0){
+      if(!attractMode) livesLeft -= 1;
+      if(livesLeft == 0 && !attractMode){
           waitTime = LOSE_WAIT_TIME;
           justLost = true;
       } else {
@@ -92,7 +92,7 @@ MyGame.screens['game-play'] = (function(game, objects, renderer, graphics, input
       renderHomeParticles = renderer.ParticleSystem(homeParticles, graphics, 'assets/images/sparkle.png');
 
       // if all the homes are filled, the player wins
-      if(frogHomes.allOccupied()){
+      if(frogHomes.allOccupied() && !attractMode){
           score += 1050;
           scoreText.updateText(score);
           waitTime = WIN_WAIT_TIME;
@@ -101,13 +101,16 @@ MyGame.screens['game-play'] = (function(game, objects, renderer, graphics, input
       // if there are still empty homes put player back to the start
       } else{
 
-          // go to next level and increase the speed of the obstacles
-          level++;
-          for(let i = 0; i < 5; i++){
-              trafficSystems[i].updateLevel(level);
-              waterSystems[i].updateLevel(level);
+        if(!attractMode){
+            // go to next level and increase the speed of the obstacles
+            level++;
+            for(let i = 0; i < 5; i++){
+                trafficSystems[i].updateLevel(level);
+                waterSystems[i].updateLevel(level);
+            }
           }
 
+          
           score += 50;
           score += 5*Math.floor((timeLeft / 1000) * 2); // Add unusedTime to score
           scoreText.updateText(score);

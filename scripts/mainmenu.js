@@ -1,7 +1,7 @@
 MyGame.screens['main-menu'] = (function(game) {
   'use strict';
 
-  const ATTRACT_MODE_TIME = 10000; // 10s
+  const ATTRACT_MODE_TIME = 3000; // 10s
 
   let lastTimeStamp = performance.now();
   let cancelNextRequest = true;

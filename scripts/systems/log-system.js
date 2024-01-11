@@ -148,10 +148,11 @@ MyGame.systems.LogSystem = function(spec) {
       let begin = (log.center.x - log.size.x / 2) / gridLength;
       let end = (log.center.x + log.size.x / 2) / gridLength;
 
-      let buffer = (0.7*log.speed * levelMultipliers[level]) / (gridLength);
+      let buffer = (0.3 * log.speed * levelMultipliers[level]) / (gridLength);
 
-      end -= buffer;
+      
       begin += buffer;
+      end -= buffer;
 
       return {
           begin: Math.round(begin),
