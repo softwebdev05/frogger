@@ -179,7 +179,7 @@ function findPath(froggerLoc, collisionGrid){
         let lowest = Number.MAX_VALUE;
         for(let i = 0; i < GRID_HEIGHT; i++){
             for(let j = 0; j < GRID_WIDTH; j++){
-                let manhattan_dist = Math.abs(currentGoal.x - j)/4) + Math.abs(currentGoal.y - i);
+                let manhattan_dist = Math.abs(currentGoal.x - j) + Math.abs(currentGoal.y - i);
                 if(manhattan_dist < lowest && cameFrom[i][j] != null){
                     point = cameFrom[i][j];
                     lowest = manhattan_dist;
