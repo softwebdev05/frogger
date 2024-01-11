@@ -24,6 +24,8 @@ MyGame.screens['game-play'] = (function(game, objects, renderer, graphics, input
   let deathReady = false;
   let flyPointsTime = 0;
   let aiWaitTime = 300;
+  let attractLogoTime = 0;
+  let attractImageReady;
 
   let frogger;
   let trafficSystems = [];
@@ -35,6 +37,7 @@ MyGame.screens['game-play'] = (function(game, objects, renderer, graphics, input
   let timeText;
   let winText;
   let loseText;
+  let attractModeLogo;
   let deathImage;
   let renderCollisions;
 
@@ -254,6 +257,8 @@ MyGame.screens['game-play'] = (function(game, objects, renderer, graphics, input
 
   function update(elapsedTime) {
 
+    if(attractMode) attractLogoTime += elapsedTime;
+
       // update death particles if they exist
       if(justDied || justLost){
           deathParticles.update(elapsedTime);
@@ -375,6 +380,22 @@ MyGame.screens['game-play'] = (function(game, objects, renderer, graphics, input
           renderer.Text.render(flyText);
       }
 
+      // render attract mode logo
+      if(attractImageReady && attractMode && attractLogoTime % 1300 < 1000){
+        MyGame.graphics.drawTexture(
+                attractModeLogo, 
+            {
+                x: graphics.canvas.width / 2,
+                y: graphics.canvas.height / 2 + gridHeight / 2,
+            },
+                0,
+            {
+                width: graphics.canvas.width * 0.9,
+                height: gridHeight,
+            },
+        );
+    }
+
       // debug: render collisions for frogger ai
       if(COLLISION_RENDER && renderCollisions){
           MyGame.graphics.drawCollisions(renderCollisions);
@@ -488,6 +509,15 @@ MyGame.screens['game-play'] = (function(game, objects, renderer, graphics, input
           deathReady = true;
       };
       deathImage.src = 'assets/images/death.png';
+
+      attractImageReady = false;
+        attractModeLogo = new Image();
+        attractModeLogo.onload = function() {
+            attractImageReady = true;
+        };
+        attractModeLogo.src = 'assets/images/attract-mode.png';
+
+
 
       winText = objects.Text({
           text: "YOU WIN!",
